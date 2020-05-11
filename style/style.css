@@ -127,3 +127,33 @@ footer label{
     text-align: center;
     font-size: 15px;
 }
+footer button {
+    background-color: transparent;
+    border: 0;
+    color: whitesmoke;
+}
+.progress-bar{
+    width: 100%;
+    background-color: whitesmoke;
+    border-radius: 20px;
+    height: 4px;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+.progress-bar1{
+    width: 30%;
+    background-color: whitesmoke;
+    border-radius: 20px;
+    height: 4px;
+    margin-top: 22px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+#icons{
+    font-size: 15px;
+}
+#icons #play{
+    font-size: 25px;
+}
