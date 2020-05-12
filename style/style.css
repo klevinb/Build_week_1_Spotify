@@ -157,3 +157,32 @@ footer button {
 #icons #play{
     font-size: 25px;
 }
+.container-fluid_login{
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.container-fluid_login .content_login{
+    max-width: 400px;
+    margin: 0 auto;
+    font-weight: 700;
+    font-size: 16px;
+}
+.container-fluid_login button{
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 14px;
+    height: 45px;
+}
+
+.hr_line{
+    position: relative;
+}
+
+#or_word {
+    position: absolute;
+    top: 0;
+    z-index: 2;
+}
