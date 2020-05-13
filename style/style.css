@@ -148,6 +148,9 @@ footer button {
     margin-right: 10px;
     margin-left: 10px;
 }
+.progress-bar{
+    color: #1b1919;
+}
 .progress-bar1{
     width: 30%;
     background-color: whitesmoke;
