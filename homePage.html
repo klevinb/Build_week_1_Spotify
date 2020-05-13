@@ -12,7 +12,14 @@
     <title>Spotify – Home</title>
     <link rel="icon" type="image/png" href="/photos/icon.png" />
   </head>
-  <body>
+  <body class="gray-bg">
+    <nav class="navbar d-none">
+      <ol style="list-style: none;" class="d-flex">
+        <li class="pr-2"><a href="homePage.html">Home</a></li>
+        <li class="pr-2"><a href="#">Search</a></li>
+        <li class="pr-2"><a href="library.html">My Library</a></li>
+      </ol>
+    </nav>
       <div class="container-fluid">
           <div class="row">
               <div id="menu" class="col-2 black-bg">
@@ -259,8 +266,18 @@
                 let menu = document.querySelectorAll("#menuOl li")
 
                 for(let i=0; i<menu.length;i++){
+                  var checked = document.querySelector(".border-left")
+                  menu[i].addEventListener("click",function(){
+                    if(menu[i].classList.contains("border-left")){
+                      menu[i].style.border=`0px !important`
+                    }else{
+                      menu[i].classList.toggle("border-left")
+                    }
+                    
+                  })
+                  
                   menu[i].addEventListener("mouseover",function(){
-                    menu[i].style.borderLeft="4px solid green"
+                    menu[i].style.borderLeft="4px solid rgb(1, 199, 1)"
                   })
                   menu[i].addEventListener("mouseout",function(){
                     menu[i].style.borderLeft=""

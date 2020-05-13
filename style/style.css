@@ -23,7 +23,8 @@ body::-webkit-scrollbar {
     color: whitesmoke;
 }
 
-#menuOl{
+#menuOl,
+.navbar a{
     padding-top: 1rem;
     list-style: none;
     font-weight: 500;
@@ -88,7 +89,6 @@ body::-webkit-scrollbar {
 }
 
 #songs .card {
-    margin-top: 2rem !important;
     background-color: transparent;
     color: white;
     border: 0;
@@ -107,9 +107,10 @@ body::-webkit-scrollbar {
   }
 
 #songs {
-    margin-left: 50px;
+    margin-top: 30px;
+    margin-left: 40px;
     padding-right: 50px;
-    height: 90vh;
+    height: 85vh;
     overflow-y: auto;
 }
 
@@ -242,14 +243,21 @@ footer button {
 .checked {
     color: #0de431;
 }
+.border-left{
+    border-left: 4px solid rgb(1, 199, 1) !important;
+}
 
 @media only screen and (max-width: 600px) {
     #menu,
     .footer_hide {
       display: none !important;
     }
+
 }
 @media only screen and (max-width: 800px) {
+    .navbar{
+        display: block !important;
+    }
     #menu{
         display: none !important;
     }
