@@ -240,7 +240,9 @@
                   </div>
                   <div class="col d-flex footer_hide">
                     <label>0:00</label>
-                    <div class="progress-bar"><div class="middle-align progress-bar__bg"><div class="progress-bar__fg_wrapper"><div class="progress-bar__fg" style="transform: translateX(-100%);"></div></div><button aria-label="Change progress" class="middle-align progress-bar__slider" style="left: 0%;"></button></div></div>
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
                     <label id="songLength">2:54</label>
                   </div>
                 </div>
@@ -249,7 +251,14 @@
                 <i class="fa fa-bars ml-3 pt-3"></i>
                 <i class="fa fa-headphones ml-3 pt-3"></i>
                 <i class="fa fa-volume-up ml-3 pt-3"></i>
-                <div class="progress-bar1"><div class="middle-align progress-bar__bg"><div class="progress-bar__fg_wrapper"><div class="progress-bar__fg" style="transform: translateX(-100%);"></div></div><button aria-label="Change progress" class="middle-align progress-bar__slider" style="left: 0%;"></button></div></div>
+                <div class="progress-bar1">
+                  <div class="middle-align progress-bar__bg">
+                    <div class="progress-bar__fg_wrapper">
+                      <div class="progress-bar__fg" style="transform: translateX(100%);"></div>
+                    </div>
+                    <button aria-label="Change progress" class="middle-align progress-bar__slider" style="left: 0%;"></button>
+                  </div>
+                </div>
               </div>
             </div>
           </footer>
@@ -302,6 +311,12 @@
                         audio["src"] = `/playList/${newName}.mp3`
                     })
                 }
+                let myAudio = document.getElementById("audio")
+                let progress = document.querySelector(".progress-bar")
+                myAudio.addEventListener("timeupdate",function(event){
+                  progress.style.width = ((myAudio.currentTime / myAudio.duration)* 100) +"%";
+                },false)
+
             }
             var myAudio = document.getElementById("audio")
             var isPlaying = true

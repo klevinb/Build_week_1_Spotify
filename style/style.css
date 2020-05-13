@@ -139,12 +139,12 @@ footer button {
     border: 0;
     color: whitesmoke;
 }
-.progress-bar{
+.progress{
     width: 100%;
     background-color: whitesmoke;
     border-radius: 20px;
-    height: 4px;
-    margin-top: 10px;
+    height: 10px;
+    margin-top: 8px;
     margin-right: 10px;
     margin-left: 10px;
 }
