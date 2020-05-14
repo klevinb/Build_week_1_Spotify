@@ -13,13 +13,26 @@
     <link rel="icon" type="image/png" href="/photos/icon.png" />
   </head>
   <body class="gray-bg">
-    <nav class="navbar d-none">
-      <ol style="list-style: none;" class="d-flex">
-        <li class="pr-2"><a href="homePage.html">Home</a></li>
-        <li class="pr-2"><a href="#">Search</a></li>
-        <li class="pr-2"><a href="library.html">My Library</a></li>
-      </ol>
-    </nav>
+    <header id="smallHeader" class="fixed-top">
+      <!-- Small & Extra Small Devices -->
+      <div class="d-sm-block; d-md-none"><!-- extra small device-->
+         <nav class="navbar navbar-expand-mb navbar-dark text-white" style="background-color: #3fa1e713;">
+                 <a class="navbar-brand" href="#">Spotify</a>
+               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+               </button>
+           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+           <div class="navbar-nav">
+              <a class="nav-item nav-link active" href="#">Trending<span class="sr-only">(current)</span></a>
+              <a class="nav-item nav-link" href="#">PODCAST</a>
+              <a class="nav-item nav-link" href="#">MOODS AND GENRES</a>
+              <a class="nav-item nav-link" href="#">NEW RELEASES</a>
+              <a class="nav-item nav-link" href="#">DISCOVER</a>
+           </div>
+           </div>
+         </nav>
+   </div><!-- end of extra small device -->
+ </header>
       <div class="container-fluid">
           <div class="row">
               <div id="menu" class="col-2 black-bg">
