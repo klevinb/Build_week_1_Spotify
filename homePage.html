@@ -239,7 +239,7 @@
                     <button onclick="loop()" id="loop"><i class="fa fa-retweet pt-1"></i></button>
                   </div>
                   <div class="col d-flex footer_hide">
-                    <label>0:00</label>
+                    <label id="currentSongTime">0:00</label>
                     <div class="progress">
                       <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
@@ -247,18 +247,11 @@
                   </div>
                 </div>
               </div>
-              <div class="col-3 d-flex p-2 pl-2 justify-content-end footer_hide">
-                <i class="fa fa-bars ml-3 pt-3"></i>
-                <i class="fa fa-headphones ml-3 pt-3"></i>
-                <i class="fa fa-volume-up ml-3 pt-3"></i>
-                <div class="progress-bar1">
-                  <div class="middle-align progress-bar__bg">
-                    <div class="progress-bar__fg_wrapper">
-                      <div class="progress-bar__fg" style="transform: translateX(100%);"></div>
-                    </div>
-                    <button aria-label="Change progress" class="middle-align progress-bar__slider" style="left: 0%;"></button>
-                  </div>
-                </div>
+              <div class="col-3 d-flex p-2 pl-2 justify-content-end align-center footer_hide">
+                <button><i class="fa fa-bars ml-3 pt-3"></i></button>
+                <button><i class="fa fa-headphones ml-3 pt-3"></i></button>
+                <button id="volumeIcon"><i class="fa fa-volume-up ml-3 pt-3"></i></button>
+                <input id="volume" type="range" min="0" max="100" value="80" step="1">
               </div>
             </div>
           </footer>
@@ -317,6 +310,37 @@
                   progress.style.width = ((myAudio.currentTime / myAudio.duration)* 100) +"%";
                 },false)
 
+                myAudio.addEventListener("timeupdate",function(event){
+                  let currentMinutes, currentSeconds, totalMinutes, totalSeconds
+                  currentMinutes = Math.floor((myAudio.currentTime / 60))
+                  totalMinutes = Math.floor((myAudio.duration / 60))
+                  currentSeconds = Math.floor((myAudio.currentTime % 60))
+                  totalSeconds = Math.floor((audio.duration % 60))
+
+                  let currentTime = currentMinutes + ":" + currentSeconds
+                  let totalTime = totalMinutes + ":" + totalSeconds
+                  currentSongTime.innerText = currentTime
+                  songLength.innerText = totalTime
+                },false)
+
+                let seeking;
+                volume.addEventListener("mousedown",function(){
+                  myAudio.volume = volume.value / 100
+                })
+                volume.addEventListener("mousemove",function(){
+                  myAudio.volume = volume.value / 100
+                })
+
+                volumeIcon.addEventListener("click",function(){
+                  if(myAudio.muted){
+                    myAudio.muted = false
+                    document.querySelector("#volumeIcon i").classList="fa fa-volume-up ml-3 pt-3"
+                  }else{
+                    myAudio.muted = true
+                    document.querySelector("#volumeIcon i").classList="fa fa-volume-off ml-3 pt-3"
+                  }
+                },false)
+
             }
             var myAudio = document.getElementById("audio")
             var isPlaying = true
@@ -347,11 +371,7 @@
                 songs[nr].className +="selected"
               }
               let songName = document.querySelector(".selected .d-flex p").innerText
-              let length = document.querySelector(".selected .d-flex p:not(:first-child)").innerText
-
               let newName = document.querySelector("#songTitle").innerText = songName
-              let newLength = document.querySelector("#songLength").innerText = length
-
               let audio = document.querySelector("#audio")
               audio["src"] = `/playList/${newName}.mp3`
             }
