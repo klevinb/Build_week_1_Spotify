@@ -317,7 +317,7 @@
                         let newLength = document.querySelector("#songLength").innerText = length
 
                         let audio = document.querySelector("#audio")
-                        audio["src"] = `/playList/${newName}.mp3`
+                        audio["src"] = `../playList/${newName}.mp3`
                     })
                 }
                 let myAudio = document.getElementById("audio")
@@ -389,7 +389,7 @@
               let songName = document.querySelector(".selected .d-flex p").innerText
               let newName = document.querySelector("#songTitle").innerText = songName
               let audio = document.querySelector("#audio")
-              audio["src"] = `/playList/${newName}.mp3`
+              audio["src"] = `../playList/${newName}.mp3`
             }
             
             function playBack(){
@@ -410,7 +410,7 @@
                   let newLength = document.querySelector("#songLength").innerText = length
 
                   let audio = document.querySelector("#audio")
-                  audio["src"] = `/playList/${newName}.mp3`
+                  audio["src"] = `./playList/${newName}.mp3`
                 }
               }
               
