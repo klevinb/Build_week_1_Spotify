@@ -7,24 +7,39 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="/style/style.css">
+    <link rel="stylesheet" href="./style/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Spotify – Home</title>
-    <link rel="icon" type="image/png" href="/photos/icon.png" />
+    <link rel="icon" type="image/png" href="./photos/icon.png" />
   </head>
   <body class="gray-bg">
-    <nav class="navbar d-none">
-      <ol style="list-style: none;" class="d-flex">
-        <li class="pr-2"><a href="homePage.html">Home</a></li>
-        <li class="pr-2"><a href="#">Search</a></li>
-        <li class="pr-2"><a href="library.html">My Library</a></li>
-      </ol>
-    </nav>
+    <header id="smallHeader" class="fixed-top">
+      <!-- Small & Extra Small Devices -->
+      <div class="d-sm-block d-md-block d-lg-block d-xl-none"><!-- extra small device-->
+         <nav class="navbar navbar-expand-mb navbar-dark text-white">
+              <div class="d-flex justify-content-between w-100">
+                <a class="navbar-brand" href="#">Spotify</a>
+                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                 </button>
+              </div>
+           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+           <div class="navbar-nav">
+              <a class="nav-item nav-link active" href="#">Trending<span class="sr-only">(current)</span></a>
+              <a class="nav-item nav-link" href="#">PODCAST</a>
+              <a class="nav-item nav-link" href="#">MOODS AND GENRES</a>
+              <a class="nav-item nav-link" href="#">NEW RELEASES</a>
+              <a class="nav-item nav-link" href="#">DISCOVER</a>
+           </div>
+           </div>
+         </nav>
+   </div><!-- end of extra small device -->
+ </header>
       <div class="container-fluid">
           <div class="row">
               <div id="menu" class="col-2 black-bg">
                 <div>
-                  <img src="/photos/spotify.png" width="120px" height="40px"/>
+                  <img src="./photos/spotify.png" width="120px" height="40px"/>
                   <ol id="menuOl">
                     <li><i class="fa fa-home pr-2"></i>Home</li>
                     <li><i class="fa fa-search pr-2"></i>Search</li>
@@ -35,7 +50,7 @@
                   <p><i class=" ml-2 fa fa-download pr-2"></i>Install App</p>
                   <hr>
                   <div class="d-flex justify-content-between">
-                    <img src="/photos/avatar.png" height="25px" width="30px" class="pr-2" />
+                    <img src="./photos/avatar.png" height="25px" width="30px" class="pr-2" />
                     <p><b>Diego 'Zibo' Banovaz</b></p>
                   </div>
                 </div>
@@ -44,7 +59,7 @@
                 <div class="row row-cols-xs-1">
                   <div id="content" class="col-12 col-md-4 d-flex justify-content-end">
                     <div class="card mt-5">
-                      <img src="/photos/musicToBeMurdered.jpg" height="250px"/>
+                      <img src="./photos/musicToBeMurdered.jpg" height="250px"/>
                       <p>Music to Be Murdered By</p>
                       <label>Eminem</label>
                       <button type="button" class="btn">PLAY</button>
@@ -221,7 +236,7 @@
           <footer>
             <div class="row light-gray-bg">
               <div class="col-3 d-flex p-2 pl-2 align-center footer_hide">
-                <img src="/photos/song.png" width="45px" height="45px"/>
+                <img src="./photos/song.png" width="45px" height="45px"/>
                 <div class="pb-0 mb-0">
                   <p id="songTitle" class="pl-3 p-0 m-0">Premonition (Intro)</p>
                   <label class="pl-3 ">Eminem</label>
@@ -234,7 +249,7 @@
                   <div id="icons" class="col d-flex justify-content-center align-center">
                     <button><i class="fa fa-random pr-2 pt-1"></i></button>
                     <button onclick="playBack()"><i class="fa fa-step-backward pr-2 pt-1"></i></button>
-                    <button onclick="togglePlay()" id="play"><audio id="audio" autoplay="autoplay" src="/playList/Premonition (Intro).mp3"> </audio><i class="fa fa-play-circle pr-2"></i></button>
+                    <button onclick="togglePlay()" id="play"><audio id="audio" autoplay="autoplay" src="./playList/Premonition (Intro).mp3"> </audio><i class="fa fa-play-circle pr-2"></i></button>
                     <button onclick="playNext()"><i class="fa fa-step-forward pr-2 pt-1"></i></button>
                     <button onclick="loop()" id="loop"><i class="fa fa-retweet pt-1"></i></button>
                   </div>
