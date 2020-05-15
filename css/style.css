@@ -2,7 +2,8 @@ body {
     background-color: rgba(7, 7, 65, 0.664);
     background: linear-gradient(to right, rgb(33, 73, 126), #010b13);
     width: 100%;
-    height: 100vh
+    height: 90vh;
+   
     }
 
 /* the dropdown nav bar for small devices */
@@ -30,13 +31,13 @@ nav {
     justify-content: flex-start;
     position: relative;
     margin-left: -10%;
-    margin-bottom:0;
+    margin-bottom:30px;
     height:80%;
 }
 
 ul {
     list-style-type: none;
-    height: 100vh;
+    height: 93vh;
 }
 
 .container {
@@ -64,6 +65,11 @@ img {
     width:250px;
     height:200px;
 }
+
+/* img:hover {
+    transform: scale(1.1, 1.1);
+    transition: .3s transform;
+} */
 
 .a1:hover::after {
     content: '';
@@ -126,7 +132,7 @@ img {
 
 .btnBorder {
     border-radius:40px;
-    width:100%;
+    padding-left: 10px;
 }
 
 .nav-2 ul {
@@ -143,12 +149,16 @@ p {
     justify-self: center;
 }
 
-.card{ 
+.card { 
     background-color: transparent;
     border: none;
     color: white;
     margin:2px;
-}
+    width:250px;
+    height:200px;
+    margin-bottom:80px;
+  
+    }
 
 
 body 
@@ -180,12 +190,13 @@ a{
 }
 
 #smallFooter {
-    
-    position: sticky;
-    width:100%;
-    padding:-10px;
-    
+    width:100%
 }
+
+
+
+
+
 
 
 
@@ -213,27 +224,27 @@ a{
 }
 
 
-
-
-
-
 .login_footer {
     
     color:grey;
     font-size: smaller;
 }
 
-@media(min-width:750px),(max-width:992px){
 
-
-    
-}
 
 /* Don't display Spotify NavBar on small and ekstra small device */
 @media(max-width: 767px){
     .navbar {
-        max-width: 90vh;
-        margin-left:2px;
+        max-width: 95vh;
+        margin:auto;
+        padding: 10px;
+        }
+    }
+
+    @media (max-width: 567px){
+        #mediumHeader {
+            display: none;
+            
         }
     }
 
@@ -258,13 +269,8 @@ a{
     }
 }
 
-@media (max-width: 575px){
-    #nav1-medium {
-        display: none;
-    }
-    footer{
-        display: none;
-    }
+@media (min-width: 575px){
+    
 }
 
 @media (max-width: 767px){
@@ -272,6 +278,7 @@ a{
         display: none;
     }
 }
+
 
 @media (max-width: 767px){
     #small {
@@ -302,3 +309,21 @@ a{
     }
 }
 
+/* footer of small and xs devices placed in center */
+@media (max-width: 768px) {
+    #icons {
+        align-items: center;
+    
+        display:flex;
+        justify-content: center !important;
+        
+       }
+}
+
+@media (min-width: 767px) {
+    #icons {
+        align-items:center;
+        display: flex;
+        justify-content: center !important;
+    }
+}

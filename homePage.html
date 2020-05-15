@@ -25,11 +25,12 @@
               </div>
            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
            <div class="navbar-nav">
-              <a class="nav-item nav-link active" href="#">Trending<span class="sr-only">(current)</span></a>
-              <a class="nav-item nav-link" href="#">PODCAST</a>
-              <a class="nav-item nav-link" href="#">MOODS AND GENRES</a>
-              <a class="nav-item nav-link" href="#">NEW RELEASES</a>
-              <a class="nav-item nav-link" href="#">DISCOVER</a>
+            <ul class="d-flex flex-column mx-4 mb-0 px-2">
+              <li class="mb-3 a2"><a href="#"><i class="fa fa-home pl-3"></i> Home </a></li>
+              <li class="mb-3 a2"><a href="homePage.html"><i class="fa fa-search pl-3"></i> Search </a></li>
+              <li class="a2"><a href="../artistPage.html"><i class="fa fa-bookmark pl-3"></i></i> Library </a></li>
+              
+              </ul>
            </div>
            </div>
          </nav>
@@ -41,9 +42,9 @@
                 <div>
                   <img src="./photos/spotify.png" width="120px" height="40px"/>
                   <ol id="menuOl">
-                    <li><i class="fa fa-home pr-2"></i>Home</li>
+                    <li><i class="fa fa-home pr-2"></i><a style="text-decoration: none; color: whitesmoke;" href="./html/trending.html">Home</li></a>
                     <li><i class="fa fa-search pr-2"></i>Search</li>
-                    <li><i class="fa fa-bookmark pr-2"></i>Your Library</li>
+                    <li class="border-left"><i class="fa fa-bookmark pr-2"></i>Your Library</li>
                   </ol>
                 </div>
                 <div id="menu2">
@@ -51,7 +52,7 @@
                   <hr>
                   <div class="d-flex justify-content-between">
                     <img src="./photos/avatar.png" height="25px" width="30px" class="pr-2" />
-                    <p><b>Diego 'Zibo' Banovaz</b></p>
+                    <p><b>Klevin Bazaiti</b></p>
                   </div>
                 </div>
               </div>
@@ -70,16 +71,16 @@
                     <div  class="card">
                       <div class="selected">
                         <div class="d-flex justify-content-between">
-                          <p><i class="fa fa-music pr-3"></i>Premonition (Intro)</p>
-                          <p>2:54</p>
+                          <p><i class="fa fa-music pr-3"></i>Unaccommodating</p>
+                          <p>3:37</p>
                         </div>
                         <label>Eminem</label>
                         <p class="songNr">0</p>
                       </div>
                       <div>
                         <div class="d-flex justify-content-between">
-                          <p><i class="fa fa-music pr-3"></i>Unaccommodating</p>
-                          <p>3:37</p>
+                          <p><i class="fa fa-music pr-3"></i>Premonition (Intro)</p>
+                          <p>2:54</p>
                         </div>
                         <label>Eminem</label>
                         <p class="songNr">1</p>
@@ -249,7 +250,7 @@
                   <div id="icons" class="col d-flex justify-content-center align-center">
                     <button><i class="fa fa-random pr-2 pt-1"></i></button>
                     <button onclick="playBack()"><i class="fa fa-step-backward pr-2 pt-1"></i></button>
-                    <button onclick="togglePlay()" id="play"><audio id="audio" autoplay="autoplay" src="./playList/Premonition (Intro).mp3"> </audio><i class="fa fa-play-circle pr-2"></i></button>
+                    <button onclick="togglePlay()" id="play"><audio id="audio" autoplay="autoplay" src="./playList/Unaccommodating.mp3"> </audio><i class="fa fa-play-circle pr-2"></i></button>
                     <button onclick="playNext()"><i class="fa fa-step-forward pr-2 pt-1"></i></button>
                     <button onclick="loop()" id="loop"><i class="fa fa-retweet pt-1"></i></button>
                   </div>
