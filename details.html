@@ -308,6 +308,7 @@
           let artistName = document.querySelector("#artist p")
           artistImg.src = data.picture_xl
           artistName.innerText = data.name
+          document.querySelector("#songImg").src=data.picture_small
           document.querySelector("title").innerText=`Spotify - ${data.name} - Top 50`
           document.querySelector("#artist #label1").style.display="none"
           document.querySelector("#artist #label2").style.display="none"
@@ -338,6 +339,108 @@
                             </div>`
                 numberOfSong++
              })
+             var songs = document.querySelectorAll("#songs .card>div")
+             let nextButton = document.querySelector("#playNext")
+            
+            for(let i=0; i<songs.length; i++){
+              songs[i].addEventListener("click",function(event){
+                let selected = document.querySelector(".selected")
+                  if(selected){
+                      selected.className = selected.className.replace(`selected`,``)
+                  }
+                  document.querySelector("#songImg").src=dataCollected[i].album.cover_small
+                  event.currentTarget.className += "selected"
+                  let songName = document.querySelector(".selected .d-flex p").innerText
+                  let length = document.querySelector(".selected .d-flex p:not(:first-child)").innerText
+
+                  let newName = document.querySelector("#songTitle").innerText = songName
+                  let newLength = document.querySelector("#songLength").innerText = length
+
+                  let audio = document.querySelector("#audio")
+                  audio["src"] = `${dataCollected[i].preview}`
+                 
+              })
+
+              }
+              nextButton.addEventListener("click",function(event){
+                let songs = document.querySelectorAll("#songs .card>div")
+              let selected = document.querySelector(".selected")
+              let nr = parseInt(document.querySelector("#songs .selected .songNr").innerText)
+                            
+              if(selected){
+                nr+= 1
+                selected.className = selected.className.replace(`selected`,``)
+                songs[nr].className +="selected"
+                let songName = document.querySelector(".selected .d-flex p").innerText
+                  let length = document.querySelector(".selected .d-flex p:not(:first-child)").innerText
+
+                  let newName = document.querySelector("#songTitle").innerText = songName
+                  let newLength = document.querySelector("#songLength").innerText = length
+                let audio = document.querySelector("#audio")
+              audio["src"] = `${dataCollected[nr].preview}`
+              }
+              
+              })
+
+              playBack.addEventListener("click",function(){
+                let songs = document.querySelectorAll("#songs .card>div")
+                let selected = document.querySelector(".selected")
+                let nr = parseInt(document.querySelector("#songs .selected .songNr").innerText)
+                              
+                if(selected){
+                  if(!nr==0){
+                    nr-= 1
+                    selected.className = selected.className.replace(`selected`,``)
+                    songs[nr].className +="selected"
+
+                    let songName = document.querySelector(".selected .d-flex p").innerText
+                  let length = document.querySelector(".selected .d-flex p:not(:first-child)").innerText
+
+                  let newName = document.querySelector("#songTitle").innerText = songName
+                  let newLength = document.querySelector("#songLength").innerText = length
+
+                    let audio = document.querySelector("#audio")
+                    audio["src"] = `${dataCollected[nr].preview}`
+                  }
+                }
+              })
+              
+              let myAudio = document.getElementById("audio")
+                let progress = document.querySelector(".progress-bar")
+                myAudio.addEventListener("timeupdate",function(event){
+                  progress.style.width = ((myAudio.currentTime / myAudio.duration)* 100) +"%";
+                },false)
+
+                myAudio.addEventListener("timeupdate",function(event){
+                  let currentMinutes, currentSeconds, totalMinutes, totalSeconds
+                  currentMinutes = Math.floor((myAudio.currentTime / 60))
+                  totalMinutes = Math.floor((myAudio.duration / 60))
+                  currentSeconds = Math.floor((myAudio.currentTime % 60))
+                  totalSeconds = Math.floor((audio.duration % 60))
+
+                  let currentTime = currentMinutes + ":" + currentSeconds
+                  let totalTime = totalMinutes + ":" + totalSeconds
+                  currentSongTime.innerText = currentTime
+                  songLength.innerText = totalTime
+                },false)
+
+                let seeking;
+                volume.addEventListener("mousedown",function(){
+                  myAudio.volume = volume.value / 100
+                })
+                volume.addEventListener("mousemove",function(){
+                  myAudio.volume = volume.value / 100
+                })
+
+                volumeIcon.addEventListener("click",function(){
+                  if(myAudio.muted){
+                    myAudio.muted = false
+                    document.querySelector("#volumeIcon i").classList="fa fa-volume-up ml-3 pt-3"
+                  }else{
+                    myAudio.muted = true
+                    document.querySelector("#volumeIcon i").classList="fa fa-volume-off ml-3 pt-3"
+                  }
+                },false)
          })
         }
         )
