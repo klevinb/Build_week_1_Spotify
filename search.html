@@ -57,7 +57,7 @@
                   <ol id="menuOl">
                     <li><i class="fa fa-home pr-2"></i><a style="text-decoration: none; color: whitesmoke;" href="./html/trending.html">Home</li></a>
                     <li class="border-left"><i class="fa fa-search pr-2"></i>Search</li>
-                    <li><i class="fa fa-bookmark pr-2"></i>Your Library</li>
+                    <li><a href="./artistPage.html" style="text-decoration: none; color: whitesmoke;"><i class="fa fa-bookmark pr-2"></i>Your Library</li></a>
                       <input style="width: 100px;" class="form-control mr-sm-2" id="searchInput" placeholder="Search">
                       <button class="btn btn-outline-success my-2 my-sm-0" onclick="clicked()">Search</button>
                   </ol>
@@ -94,7 +94,7 @@
                   <div id="icons" class="col d-flex justify-content-center align-center">
                     <button><i class="fa fa-random pr-2 pt-1"></i></button>
                     <button onclick="playBack()"><i class="fa fa-step-backward pr-2 pt-1"></i></button>
-                    <button onclick="togglePlay()" id="play"><audio id="audio" autoplay="autoplay" src="./playList/Unaccommodating.mp3"> </audio><i class="fa fa-play-circle pr-2"></i></button>
+                    <button onclick="togglePlay()" id="play"><audio id="audio" autoplay="autoplay"> </audio><i class="fa fa-play-circle pr-2"></i></button>
                     <button onclick="playNext()"><i class="fa fa-step-forward pr-2 pt-1"></i></button>
                     <button onclick="loop()" id="loop"><i class="fa fa-retweet pt-1"></i></button>
                   </div>
