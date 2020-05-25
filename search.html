@@ -58,8 +58,10 @@
                     <li><i class="fa fa-home pr-2"></i><a style="text-decoration: none; color: whitesmoke;" href="./html/trending.html">Home</li></a>
                     <li class="border-left"><i class="fa fa-search pr-2"></i>Search</li>
                     <li><a href="./artistPage.html" style="text-decoration: none; color: whitesmoke;"><i class="fa fa-bookmark pr-2"></i>Your Library</li></a>
-                      <input style="width: 100px;" class="form-control mr-sm-2" id="searchInput" placeholder="Search">
-                      <button class="btn btn-outline-success my-2 my-sm-0" onclick="clicked()">Search</button>
+                      <div class="d-flex mt-3">
+                        <input style="width: 100px; font-size: 12px;" class="form-control mr-sm-2" id="searchInput" placeholder="Search">
+                        <button style="font-size: 12px;"  class="btn btn-outline-success my-2 my-sm-0" onclick="clicked()">Search</button>
+                      </div>
                   </ol>
                 </div>
                 <div id="menu2">
@@ -145,11 +147,17 @@
               dataColected.forEach(search =>{
 
                 reference.innerHTML += `<div class="card">
+                <a style="text-decoration:none; color:whitesmoke;" href="details.html?albumId=${search.album.id}"">
                 <img class="card-img-top" src="${search.album.cover}">
+                </a>
                 <div class="card-body d-flex justify-content-between flex-column">
                 <h6 class="card-title">${search.title_short}</h6>
+                <a style="text-decoration:none; color:whitesmoke;" href="details.html?artistId=${search.artist.id}"">
                 <p>Artist: ${search.artist.name}</p>
+                </a>
+                <a style="text-decoration:none; color:whitesmoke;" href="details.html?albumId=${search.album.id}"">
                 <p>Album: ${search.album.title}</p>
+                </a>
                 <p>Duration: ${((search.duration)/100)}</p>
                 </div>
                 </div>
